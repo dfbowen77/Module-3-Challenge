@@ -1,23 +1,12 @@
 // Assignment code here
 function generatePassword(){
-  return "12345"
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  
   function generatePasswordLen(){
     length = window.prompt("How long would you like your password to be? Please select a number between 8 and 32 characters!")
     if (length >= 8 && length <= 128) {
       return length
     } else {
       window.alert("You entered an invalid password length. Try again!")
-      return writePassword() 
+      return generatePasswordLen() 
     }
 
   }
@@ -101,8 +90,23 @@ function writePassword() {
       i++
     }
   }
+  return pwd
+}
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  console.log(password)
+  var passwordText = document.querySelector("#password");
+  
+ 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
