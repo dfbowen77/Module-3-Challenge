@@ -46,13 +46,12 @@ function writePassword() {
   generatePasswordNum()
   generatePasswordSpecChar()
 
-  for (var i = 0; i < length; i++) {
+  for (var i = 0; i < length;) {
 
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
     }
     randint = (getRandomInt(4));
-    console.log("the random integer is: " + randint)
 
     if (randint === 0 && lowerCase) {
       function getRandomLetter() {
@@ -61,6 +60,7 @@ function writePassword() {
       }
       pwd += getRandomLetter();
       console.log(pwd)
+      i++
     }
 
     if (randint === 1 && upperCase) {
@@ -71,25 +71,28 @@ function writePassword() {
       randUpper = getRandomLetter().toUpperCase();
       pwd += randUpper;
       console.log(pwd);
+      i++
     }  
 
     if (randint === 2 && numbers) {
       function getRandomNumber() {
-        console.log(String.fromCharCode(Math.floor(Math.random() * 10) + 48))
-        return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+        var randomNumber = String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+        return randomNumber;
       }
       pwd += getRandomNumber();
       console.log(pwd)
+      i++
     }
 
     if (randint === 3 && specialChar) {
       function getRandomSymbol() {
         const symbols = "!@#$%^&*(){}[]=<>/,.";
-        console.log(symbols[Math.floor(Math.random() * symbols.length)])
-        return symbols[Math.floor(Math.random() * symbols.length)];
+        var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)]
+        return randomSymbol;
       }
       pwd += getRandomSymbol();
       console.log(pwd)
+      i++
     }
   }
   passwordText.value = password;
