@@ -41,6 +41,11 @@ function generatePassword(){
   generatePasswordNum()
   generatePasswordSpecChar()
 
+  if (lowerCase === false && upperCase === false && numbers === false && specialChar === false) {
+    window.alert("You have not entered valid password criteria. Please select at least one type of character for your password! Try again!")
+    return generatePassword() 
+  }
+
   for (var i = 0; i < length;) {
 
     function getRandomInt(max) {
