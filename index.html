@@ -17,6 +17,7 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <!-- the password element is referenced in the javascript and it is used for displaying the text of the generated password.  -->
           <textarea
             readonly
             id="password"
@@ -25,10 +26,12 @@
           ></textarea>
         </div>
         <div class="card-footer">
+          <!-- The generate element is referenced in the javascript and it has an event listener that triggers when the generate button is clicked. -->
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
+    <!-- The following line is where the javascript file is called in the html.  -->
     <script src="script.js"></script>
   </body>
 </html>
